@@ -23,6 +23,7 @@ namespace CasaDoSomCarteirinha
                 !string.IsNullOrEmpty(mespicker.Text))
             {
                 Carteirinha c = new Carteirinha(new string[4] { nomebox.Text, IdBox.Text, cursoText.Text, mespicker.Text });
+                c.StartPosition = FormStartPosition.CenterScreen;
                 c.Visible = true;
             }
             else MessageBox.Show("Você deve preencher todos os campos", "Você deve preencher todos os campos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

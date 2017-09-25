@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
@@ -99,6 +100,7 @@ namespace CasaDoSomCarteirinha
                     panel1.DrawToBitmap(bm, new Rectangle(0,0, panel1.ClientSize.Width, panel1.ClientSize.Height));
                     bm.Save(Stream,ImageFormat.Png);
                     panel1.Controls.SetChildIndex(carteirinhabox, 4);
+                    MessageBox.Show( "Sua carteirinha foi salva com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -109,7 +111,7 @@ namespace CasaDoSomCarteirinha
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.FileName = "Carteira de " + title + ".pdf";
             saveFileDialog1.Title = "Selecione o local para salvar e Imprimir";
-            saveFileDialog1.Filter = "Image File(*.pdf) | *.pdf";
+            saveFileDialog1.Filter = "PDF File(*.pdf) | *.pdf";
             saveFileDialog1.DefaultExt = "pdf";
             saveFileDialog1.AddExtension = true;
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -117,10 +119,14 @@ namespace CasaDoSomCarteirinha
 
                 using (var Stream = saveFileDialog1.OpenFile())
                 {
+                    System.GC.Collect();
+                    System.GC.WaitForPendingFinalizers();
+
                     panel1.Controls.SetChildIndex(carteirinhabox, 0);
                     Bitmap bm = new Bitmap(panel1.ClientSize.Width, panel1.ClientSize.Height);
                     panel1.DrawToBitmap(bm, new Rectangle(0, 0, panel1.ClientSize.Width, panel1.ClientSize.Height));
-                    
+                    if (File.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "temp.png")))
+                        File.Delete(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "temp.png"));
                     bm.Save(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),"temp.png"), ImageFormat.Png);
                     panel1.Controls.SetChildIndex(carteirinhabox, 4);
 
@@ -128,11 +134,45 @@ namespace CasaDoSomCarteirinha
                     doc.Pages.Add(new PdfPage());
                     XGraphics xgr = XGraphics.FromPdfPage(doc.Pages[0]);
                     XImage img = XImage.FromFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "temp.png"));
-
+                    
                     xgr.DrawImage(img, 20, 20);
+                    img = null;
                     doc.Save(Stream);
                     doc.Close();
-                   
+                    try
+                    {
+                        /* Process p = new Process();
+                         p.StartInfo = new ProcessStartInfo()
+                         {
+                             CreateNoWindow = true,
+                             Verb = "print",
+                             FileName = saveFileDialog1.FileName //put the correct path here
+                         };
+                         Debug.WriteLine(saveFileDialog1.FileName);
+                         p.Start();*/
+                        int.Parse("dkasjksaj");
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            MessageBox.Show("Para obter o tamanho pefeito selecione 10x15cm e desmarque a opção ajustar imagem ao quadro", "Dica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Process p = new Process();
+                            p.StartInfo = new ProcessStartInfo()
+                            {
+                                CreateNoWindow = true,
+                                Verb = "print",
+                                FileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "temp.png") //put the correct path here
+                            };
+                            Debug.WriteLine(saveFileDialog1.FileName);
+                            p.Start();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Erro ao Imprimir", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                 
                 }
 
             }
