@@ -58,6 +58,7 @@
             this.imprimir.TabIndex = 2;
             this.imprimir.Text = "Imprimir";
             this.imprimir.UseVisualStyleBackColor = true;
+            this.imprimir.Click += new System.EventHandler(this.imprimir_Click);
             // 
             // nome
             // 
@@ -101,11 +102,12 @@
             // 
             // carteirinhabox
             // 
+            this.carteirinhabox.BackColor = System.Drawing.Color.Transparent;
             this.carteirinhabox.Image = global::CasaDoSomCarteirinha.Properties.Resources.Carteira;
             this.carteirinhabox.InitialImage = global::CasaDoSomCarteirinha.Properties.Resources.Carteira;
             this.carteirinhabox.Location = new System.Drawing.Point(0, 0);
             this.carteirinhabox.Name = "carteirinhabox";
-            this.carteirinhabox.Size = new System.Drawing.Size(384, 324);
+            this.carteirinhabox.Size = new System.Drawing.Size(399, 403);
             this.carteirinhabox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.carteirinhabox.TabIndex = 0;
             this.carteirinhabox.TabStop = false;
@@ -114,7 +116,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.nome);
             this.panel1.Controls.Add(this.Curso);
             this.panel1.Controls.Add(this.indentidade);
@@ -122,7 +124,7 @@
             this.panel1.Controls.Add(this.carteirinhabox);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(387, 327);
+            this.panel1.Size = new System.Drawing.Size(402, 406);
             this.panel1.TabIndex = 7;
             // 
             // Carteirinha

@@ -1,11 +1,13 @@
-﻿using System;
+﻿using PdfSharp.Drawing;
+using PdfSharp.Pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
-
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -92,10 +94,45 @@ namespace CasaDoSomCarteirinha
                              
                 using (var Stream = saveFileDialog1.OpenFile())
                 {
-                    
+                    panel1.Controls.SetChildIndex(carteirinhabox, 0);
                     Bitmap bm = new Bitmap(panel1.ClientSize.Width, panel1.ClientSize.Height);
                     panel1.DrawToBitmap(bm, new Rectangle(0,0, panel1.ClientSize.Width, panel1.ClientSize.Height));
                     bm.Save(Stream,ImageFormat.Png);
+                    panel1.Controls.SetChildIndex(carteirinhabox, 4);
+                }
+
+            }
+        }
+
+        private void imprimir_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.FileName = "Carteira de " + title + ".pdf";
+            saveFileDialog1.Title = "Selecione o local para salvar e Imprimir";
+            saveFileDialog1.Filter = "Image File(*.pdf) | *.pdf";
+            saveFileDialog1.DefaultExt = "pdf";
+            saveFileDialog1.AddExtension = true;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+
+                using (var Stream = saveFileDialog1.OpenFile())
+                {
+                    panel1.Controls.SetChildIndex(carteirinhabox, 0);
+                    Bitmap bm = new Bitmap(panel1.ClientSize.Width, panel1.ClientSize.Height);
+                    panel1.DrawToBitmap(bm, new Rectangle(0, 0, panel1.ClientSize.Width, panel1.ClientSize.Height));
+                    
+                    bm.Save(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),"temp.png"), ImageFormat.Png);
+                    panel1.Controls.SetChildIndex(carteirinhabox, 4);
+
+                    PdfDocument doc = new PdfDocument();
+                    doc.Pages.Add(new PdfPage());
+                    XGraphics xgr = XGraphics.FromPdfPage(doc.Pages[0]);
+                    XImage img = XImage.FromFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "temp.png"));
+
+                    xgr.DrawImage(img, 20, 20);
+                    doc.Save(Stream);
+                    doc.Close();
+                   
                 }
 
             }
