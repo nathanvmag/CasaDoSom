@@ -8,3 +8,9 @@ C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSo
 C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\obj\Debug\CasaDoSomCarteirinha.exe
 C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\obj\Debug\CasaDoSomCarteirinha.pdb
 C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\obj\Debug\CasaDoSomCarteirinha.Carteirinha.resources
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\bin\Debug\PdfSharp.Charting.dll
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\bin\Debug\PdfSharp.dll
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\bin\Debug\PdfSharp.xml
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\bin\Debug\PdfSharp.Charting.xml
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\bin\Debug\de\PdfSharp.Charting.resources.dll
