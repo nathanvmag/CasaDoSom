@@ -1,0 +1,10 @@
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\bin\Debug\CasaDoSomCarteirinha.exe.config
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\bin\Debug\CasaDoSomCarteirinha.exe
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\bin\Debug\CasaDoSomCarteirinha.pdb
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\obj\Debug\CasaDoSomCarteirinha.csprojResolveAssemblyReference.cache
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\obj\Debug\CasaDoSomCarteirinha.Form1.resources
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\obj\Debug\CasaDoSomCarteirinha.Properties.Resources.resources
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\obj\Debug\CasaDoSomCarteirinha.csproj.GenerateResource.Cache
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\obj\Debug\CasaDoSomCarteirinha.exe
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\obj\Debug\CasaDoSomCarteirinha.pdb
+C:\Users\nathan.magalhaes\Desktop\GitHub\casadosom\CasaDoSomCarteirinha\CasaDoSomCarteirinha\obj\Debug\CasaDoSomCarteirinha.Carteirinha.resources
